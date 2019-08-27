@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Mocks Mail</title>
+<script type="text/javascript">
+function formValidator()
+{
+var nm=document.forms["passdata"]["name"].value;
+var em = document.forms["passdata"]["mid"].value;
+var atpos = em.indexOf("@");
+var dotpos = em.lastIndexOf(".");
+var mn = document.forms["passdata"]["cn"].value;
+var mobNumLen = document.forms["passdata"]["cn"].value.length; 
+/*
+if(nm == "" || nm == NULL)
+{
+alert( "Name Field must not be empty" );
+alert("Enter proper e-mail address");
+document.passdata.name.focus() ;
+return false;
+} 
+*/
+if(em == NULL || em=="")
+{
+alert("Email field must not be empty");
+document.passdata.mid.focus();
+return false;
+} 
+/*
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=em.length)
+{
+alert("Enter proper e-mail address");
+document.passdata.mid.focus();
+return false;
+}
+
+if(mn == "" || mn == null || isNaN(mn) ||
+mn.length < 10 || mn.length >10 )
+{
+alert( "Mobile Number must be in the format ##### and of minimum 10 digits" );
+document.passdata.cn.focus() ;
+return false;
+} 
+
+if ( ( passdata.gender[0].checked == false ) && ( passdata.gender[1].checked == false ) ) 
+{
+alert ( "Please choose your Gender: Male or Female" ); 
+return false;
+}
+*/
+
+return( true );
+
+}
+   
+</script>
+
+<body>
+<form name="passdata" action="." method="post" onsubmit="return formValidator();">
+<p>HR's Mail ID:
+<input type="text" name="mid"></p>
+<p>HR Gender:
+<input type="radio" name="gender" value="male"> Male
+  <input type="radio" name="gender" value="female"> Female<br></p>
+  
+<p>Forese Member's Name:
+<input type="text" name="name"></p>
+<p>Forese Member's Contact Number:
+<input type="text" name="cn"></p>
+
+<input type="submit" name="submit" value="GO">
+</form>
+</body></html>
